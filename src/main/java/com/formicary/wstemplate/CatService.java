@@ -7,12 +7,15 @@ import javax.jws.WebService;
 
 import com.formicary.wstemplate.model.Cat;
 import org.springframework.stereotype.Service;
+import com.formicary.wstemplate.model.CatManager;
 
 @Service("CatService")
 @WebService
 public class CatService {
 
   private static List<String> catNames;
+
+  private CatManager catManager;
 
   static {
     catNames = new ArrayList<String>();

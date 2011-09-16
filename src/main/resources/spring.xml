@@ -21,4 +21,6 @@
     implementor="#CatService"
     address="/catservice"/>
 
+  <bean class="com.formicary.wstemplate.model.CatManager" id="catManager" />
+
 </beans>
