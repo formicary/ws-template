@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        ">
+
+   <import resource="spring-test.xml"/>
+  <import resource="classpath:META-INF/cxf/cxf.xml"/>
+
+  <bean name="catEndpoint" class="javax.xml.ws.Endpoint" factory-method="publish">
+    <constructor-arg value="http://localhost:4567/catservice"/>
+    <constructor-arg ref="CatService"/>
+  </bean>
+</beans>

@@ -1,15 +1,6 @@
 package com.formicary.wstemplate;
 
-import java.io.IOException;
-import javax.xml.ws.Endpoint;
-
 import com.formicary.wstemplate.model.Cat;
-import org.apache.commons.io.IOUtils;
-import org.apache.cxf.jaxws.EndpointImpl;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,16 +19,6 @@ import static org.junit.Assert.*;
 public class CatServiceTest {
   @Autowired
   private CatService service;
-  @Autowired
-  private Endpoint endpoint;
-  private static final HttpClient client = new DefaultHttpClient();
-
-  @Test
-  public void getWSDL() throws IOException {
-    HttpGet get = new HttpGet(((EndpointImpl)endpoint).getAddress() + "?wsdl");
-    HttpResponse response = client.execute(get);
-    System.out.println(IOUtils.toString(response.getEntity().getContent()));
-  }
 
   @Test
   public void createCatName() {
