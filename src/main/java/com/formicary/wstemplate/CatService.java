@@ -9,7 +9,6 @@ import javax.persistence.PersistenceContext;
 
 import com.formicary.wstemplate.model.Cat;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service("CatService")
@@ -71,10 +70,13 @@ public class CatService {
     return kittens;
   }
 
-  @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
   public Cat getCatById(final Integer catId) {
     final Cat cat = entityManager.find(Cat.class, catId);
     return cat;
   }
 
+  public int saveCat(Cat c) {
+    entityManager.persist(c);
+    return c.getId();
+  }
 }
