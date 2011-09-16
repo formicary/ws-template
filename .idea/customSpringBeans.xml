@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CustomBeanRegistry">
+    <option name="map">
+      <map>
+        <entry key="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;jaxws:endpoint xmlns:jaxws=&quot;http://cxf.apache.org/jaxws&quot; id=&quot;catService&quot; implementor=&quot;com.formicary.wstemplate.CatService&quot; address=&quot;/catservice&quot; /&gt;&#10;&#10;">
+          <value>
+            <list>
+              <CustomBeanInfo>
+                <option name="beanName" value="catService" />
+                <option name="beanClassName" value="org.apache.cxf.jaxws.spring.EndpointDefinitionParser$SpringEndpointImpl" />
+                <option name="idAttribute" value="id" />
+                <option name="constructorArgumentCount" value="1" />
+              </CustomBeanInfo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="policies">
+      <map>
+        <entry>
+          <key>
+            <MyQName>
+              <option name="namespace" value="http://cxf.apache.org/jaxws" />
+              <option name="localName" value="endpoint" />
+            </MyQName>
+          </key>
+          <value>
+            <CustomBeanInfo>
+              <option name="beanClassName" value="org.apache.cxf.jaxws.spring.EndpointDefinitionParser$SpringEndpointImpl" />
+              <option name="idAttribute" value="id" />
+              <option name="constructorArgumentCount" value="1" />
+            </CustomBeanInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
+
