@@ -12,7 +12,7 @@ import org.hibernate.annotations.GenericGenerator;
 @XmlType(name = "cat", namespace = "http://cat.formicary.net")
 public class Cat implements Serializable{
 
-  private long id;
+  private int id;
   private String catName;
   private int age;
 
@@ -21,11 +21,11 @@ public class Cat implements Serializable{
   @Id
   @GeneratedValue(generator="increment")
   @GenericGenerator(name="increment", strategy = "increment")
-  public long getId() {
+  public int getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(int id) {
     this.id = id;
   }
 

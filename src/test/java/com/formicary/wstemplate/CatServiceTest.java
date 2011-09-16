@@ -1,12 +1,13 @@
 package com.formicary.wstemplate;
 
+import com.formicary.wstemplate.model.Cat;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 /**
  * @author hani
@@ -22,5 +23,12 @@ public class CatServiceTest {
   @Test
   public void createCatName() {
     assertNotNull(service.nameCat());
+  }
+
+  @Test
+  public void adoptAndSaveCat() {
+    Cat c = service.adoptCat();
+    int id = service.saveCat(c);
+    assertTrue(id > 0);
   }
 }
