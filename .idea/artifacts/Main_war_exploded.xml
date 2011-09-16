@@ -8,6 +8,7 @@
           <element id="module-output" name="Main" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.0.1" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.2" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:0.9.29" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:0.9.29" />
