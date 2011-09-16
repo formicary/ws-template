@@ -1,0 +1,18 @@
+<configuration scan="true" scanperiod="3 seconds">
+  <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} %-5level %logger{10} %m%n</pattern>
+    </encoder>
+  </appender>
+  <logger name="org.hibernate.cfg.annotations.QueryBinder" level="WARN"/>
+  <logger name="org.hibernate" level="INFO"/>
+  <logger name="org.hibernate.cfg.annotations.CollectionBinder" level="WARN"/>
+  <logger name="org.hibernate.cfg.AnnotationBinder" level="WARN"/>
+  <logger name="org.hibernate.tool.hbm2ddl" level="WARN"/>
+  <logger name="de.schlichtherle.io" level="WARN"/>
+  <logger name="org.hibernate.cfg.SettingsFactory" level="WARN"/>
+  <logger name="org.hibernate.cfg.annotations.EntityBinder" level="WARN"/>
+  <root level="INFO">
+    <appender-ref ref="console"/>
+  </root>
+</configuration>
