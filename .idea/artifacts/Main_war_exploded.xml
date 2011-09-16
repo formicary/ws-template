@@ -16,9 +16,13 @@
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.1" />
           <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.1.Final" />
           <element id="library" level="project" name="Maven: javax.transaction:jta:1.1" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:3.6.7.Final" />
+          <element id="library" level="project" name="Maven: cglib:cglib:2.2" />
+          <element id="library" level="project" name="Maven: asm:asm:3.3" />
+          <element id="library" level="project" name="Maven: javassist:javassist:3.12.0.GA" />
+          <element id="library" level="project" name="Maven: hsqldb:hsqldb:1.8.0.10" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-frontend-jaxws:2.4.2" />
           <element id="library" level="project" name="Maven: xml-resolver:xml-resolver:1.2" />
-          <element id="library" level="project" name="Maven: asm:asm:3.3" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-api:2.4.2" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-common-utilities:2.4.2" />
           <element id="library" level="project" name="Maven: org.apache.ws.xmlschema:xmlschema-core:2.0" />

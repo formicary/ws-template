@@ -4,18 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import com.formicary.wstemplate.model.Cat;
 import org.springframework.stereotype.Service;
-import com.formicary.wstemplate.model.CatManager;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service("CatService")
 @WebService
+@Transactional
 public class CatService {
 
   private static List<String> catNames;
 
-  private CatManager catManager;
+  @PersistenceContext(unitName = "pu")
+  private EntityManager entityManager;
 
   static {
     catNames = new ArrayList<String>();
@@ -64,6 +69,12 @@ public class CatService {
       kittens.add(kitten);
     }
     return kittens;
+  }
+
+  @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+  public Cat getCatById(final Integer catId) {
+    final Cat cat = entityManager.find(Cat.class, catId);
+    return cat;
   }
 
 }
