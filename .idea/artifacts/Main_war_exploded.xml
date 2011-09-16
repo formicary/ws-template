@@ -53,11 +53,9 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-context:3.0.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:3.0.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:3.0.6.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:3.0.6.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.0.6.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:3.0.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:3.0.6.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-oxm:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.0.6.RELEASE" />
         </element>
       </element>
     </root>
