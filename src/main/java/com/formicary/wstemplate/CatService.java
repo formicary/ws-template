@@ -6,7 +6,9 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import com.formicary.wstemplate.model.Cat;
+import org.springframework.stereotype.Service;
 
+@Service("CatService")
 @WebService
 public class CatService {
 
