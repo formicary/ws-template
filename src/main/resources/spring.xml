@@ -21,20 +21,31 @@
     implementor="#CatService"
     address="/catservice"/>
 
-	<bean name="javax.persistence.EntityManagerFactory"
+  <bean name="persistenceUnitManager" class="org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager">
+    <property name="defaultDataSource" ref="dataSource" />
+    <property name="persistenceXmlLocation" value="classpath*:META-INF/hibernate-persistence.xml" />
+  </bean>
+
+  <bean name="jpaVendor" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" p:generateDdl="true"
+        p:showSql="false" />
+
+	<bean name="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="dataSource" ref="javax.sql.DataSource" />
-		<property name="persistenceUnitName" value="pu" />
-		<property name="persistenceProviderClass" value="org.hibernate.ejb.HibernatePersistence" />
-		<property name="jpaProperties">
-			<props>
-				<prop key="hibernate.hbm2ddl.auto">create-drop</prop>
-				<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
-			</props>
-		</property>
+    <property name="jpaVendorAdapter" ref="jpaVendor" />
+    <property name="persistenceUnitManager" ref="persistenceUnitManager" />
+
+		<!--<property name="dataSource" ref="dataSource" />-->
+		<!--<property name="persistenceUnitName" value="pu" />-->
+		<!--<property name="persistenceProviderClass" value="org.hibernate.ejb.HibernatePersistence" />-->
+		<!--<property name="jpaProperties">-->
+			<!--<props>-->
+				<!--<prop key="hibernate.hbm2ddl.auto">create-drop</prop>-->
+				<!--<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>-->
+			<!--</props>-->
+		<!--</property>-->
 	</bean>
 
-	<bean name="javax.sql.DataSource"
+	<bean name="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.hsqldb.jdbcDriver" />
 		<property name="url"
@@ -43,12 +54,11 @@
 		<property name="password" value="" />
 	</bean>
 
-	<bean name="org.springframework.transaction.PlatformTransactionManager"
-		class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="javax.persistence.EntityManagerFactory" />
-	</bean>
+  <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="dataSource" ref="dataSource"/>
+    <property name="entityManagerFactory" ref="entityManagerFactory" />
+  </bean>
 
-	<tx:annotation-driven
-		transaction-manager="org.springframework.transaction.PlatformTransactionManager" />
+	<tx:annotation-driven transaction-manager="txManager" />
 
 </beans>
