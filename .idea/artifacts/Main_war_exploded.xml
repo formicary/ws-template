@@ -8,6 +8,7 @@
           <element id="module-output" name="Main" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:3.6.7" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-frontend-jaxws:2.4.2" />
           <element id="library" level="project" name="Maven: xml-resolver:xml-resolver:1.2" />
           <element id="library" level="project" name="Maven: asm:asm:3.3" />
