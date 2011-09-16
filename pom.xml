@@ -15,12 +15,12 @@
    </dependency>
     <dependency>
       <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-rt-frontend-jaxrs</artifactId>
-      <version>2.4.0</version>
+      <artifactId>cxf-rt-frontend-jaxws</artifactId>
+      <version>2.4.2</version>
    </dependency>
     <dependency>
       <groupId>org.apache.cxf</groupId>
-      <artifactId>apache-cxf</artifactId>
+      <artifactId>cxf-rt-transports-http</artifactId>
       <version>2.4.2</version>
    </dependency>
     <dependency>
