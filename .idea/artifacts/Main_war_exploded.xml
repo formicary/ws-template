@@ -38,15 +38,20 @@
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-ws-addr:2.4.2" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-transports-http:2.4.2" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-transports-common:2.4.2" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-web:3.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:3.0.6.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-beans:3.0.5.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-core:3.0.5.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-asm:3.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-asm:3.0.6.RELEASE" />
           <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.1.1" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context:3.0.5.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-aop:3.0.5.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-expression:3.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-orm:3.0.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-oxm:3.0.6.RELEASE" />
         </element>
       </element>
     </root>
