@@ -8,8 +8,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "cat")
-@XmlRootElement(name = "cat", namespace = "http://cat.formicary.net")
-@XmlType(name = "cat", namespace = "http://cat.formicary.net")
+@XmlRootElement(name = "cat", namespace = "http://model.wstemplate.formicary.com")
+@XmlType(name = "cat", namespace = "http://model.wstemplate.formicary.com")
 public class Cat implements Serializable{
 
   private int id;
