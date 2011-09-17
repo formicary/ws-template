@@ -6,6 +6,8 @@ import javax.xml.ws.Endpoint;
 import com.formicary.wstemplate.model.Cat;
 import org.apache.commons.io.IOUtils;
 import org.apache.cxf.endpoint.Client;
+import org.apache.cxf.interceptor.LoggingInInterceptor;
+import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.EndpointImpl;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 import org.apache.http.HttpResponse;
@@ -18,7 +20,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author hani
@@ -26,7 +29,7 @@ import static org.junit.Assert.*;
  *         Time: 4:05 PM
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:/spring-integration.xml" })
+@ContextConfiguration(locations = {"classpath:/spring-integration.xml"})
 public class IntegrationTests {
   @Autowired
   private Endpoint endpoint;
@@ -41,11 +44,18 @@ public class IntegrationTests {
 
   @Test
   public void makeCat() throws Exception {
-    JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
-    Client client = dcf.createClient(((EndpointImpl)endpoint).getAddress() + "?wsdl");
+    Client client = createClient();
     Object[] res = client.invoke("makeCat", "flappy");
     assertTrue(res[0].getClass().getName(), res[0].getClass().getName().equals(Cat.class.getName()));
     Cat c = (Cat)res[0];
     assertEquals("flappy", c.getCatName());
+  }
+
+  private Client createClient() {
+    JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
+    Client client = dcf.createClient(((EndpointImpl)endpoint).getAddress() + "?wsdl");
+    client.getInInterceptors().add(new LoggingInInterceptor());
+    client.getOutInterceptors().add(new LoggingOutInterceptor());
+    return client;
   }
 }
