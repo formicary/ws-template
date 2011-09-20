@@ -31,4 +31,16 @@ public class CatServiceTest {
     int id = service.saveCat(c);
     assertTrue(id > 0);
   }
+
+  @Test
+  public void fetchPreviousRevision() {
+    Cat cat = new Cat();
+    cat.setCatName("whiskers");
+    cat.setAge(5);
+    int id = service.saveCat(cat);
+    cat.setAge(6);
+    service.updateCat(cat);
+    cat = service.getPreviousRevision(id);
+    assertEquals(cat.getAge(), 5);
+  }
 }

@@ -6,5 +6,32 @@
     <description>Cat</description>
     <class>com.formicary.wstemplate.model.Cat</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+    <properties>
+      <!-- Enable Hibernate's automatic session context management -->
+      <property name="hibernate.current_session_context_class" value="thread"/>
+
+      <!-- Disable the second-level cache  -->
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+
+      <property name="org.hibernate.envers.do_not_audit_optimistic_locking_field" value="false" />
+
+      <!-- Echo all executed SQL to stdout -->
+      <property name="hibernate.show_sql" value="false"/>
+
+      <property name="hibernate.ejb.event.post-insert"
+                value="org.hibernate.ejb.event.EJB3PostInsertEventListener,org.hibernate.envers.event.AuditEventListener"/>
+      <property name="hibernate.ejb.event.post-update"
+                value="org.hibernate.ejb.event.EJB3PostUpdateEventListener,org.hibernate.envers.event.AuditEventListener"/>
+      <property name="hibernate.ejb.event.post-delete"
+                value="org.hibernate.ejb.event.EJB3PostDeleteEventListener,org.hibernate.envers.event.AuditEventListener"/>
+      <property name="hibernate.ejb.event.pre-collection-update"
+                value="org.hibernate.envers.event.AuditEventListener"/>
+      <property name="hibernate.ejb.event.pre-collection-remove"
+                value="org.hibernate.envers.event.AuditEventListener"/>
+      <property name="hibernate.ejb.event.post-collection-recreate"
+                value="org.hibernate.envers.event.AuditEventListener"/>
+
+    </properties>
   </persistence-unit>
 </persistence>

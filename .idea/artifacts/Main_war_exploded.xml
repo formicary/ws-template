@@ -23,6 +23,11 @@
           <element id="library" level="project" name="Maven: cglib:cglib:2.2" />
           <element id="library" level="project" name="Maven: asm:asm:3.3" />
           <element id="library" level="project" name="Maven: javassist:javassist:3.12.0.GA" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-envers:3.6.7.Final" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-tools:3.2.0.ga" />
+          <element id="library" level="project" name="Maven: org.beanshell:bsh:2.0b4" />
+          <element id="library" level="project" name="Maven: freemarker:freemarker:2.3.8" />
+          <element id="library" level="project" name="Maven: org.hibernate:jtidy:r8-20060801" />
           <element id="library" level="project" name="Maven: hsqldb:hsqldb:1.8.0.10" />
           <element id="library" level="project" name="Maven: org.apache.cxf:cxf-rt-frontend-jaxws:2.4.2" />
           <element id="library" level="project" name="Maven: xml-resolver:xml-resolver:1.2" />

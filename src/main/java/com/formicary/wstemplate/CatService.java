@@ -8,6 +8,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import com.formicary.wstemplate.model.Cat;
+import org.hibernate.envers.AuditReader;
+import org.hibernate.envers.AuditReaderFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -78,5 +80,20 @@ public class CatService {
   public int saveCat(Cat c) {
     entityManager.persist(c);
     return c.getId();
+  }
+
+  public void updateCat(Cat cat) {
+    entityManager.merge(cat);
+  }
+
+  public Cat getPreviousRevision(int catId) {
+    Cat oldCat = null;
+    AuditReader auditReader = AuditReaderFactory.get(entityManager);
+    List<Number> revisions = auditReader.getRevisions(Cat.class, catId);
+    if (revisions.size() > 1) {
+      int previousRevision = revisions.get(revisions.size() - 2).intValue();
+      oldCat = auditReader.find(Cat.class, catId, previousRevision);
+    }
+    return oldCat;
   }
 }

@@ -5,8 +5,10 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.envers.Audited;
 
 @Entity
+@Audited
 @Table(name = "cat")
 @XmlRootElement(name = "cat", namespace = "http://model.wstemplate.formicary.com")
 @XmlType(name = "cat", namespace = "http://model.wstemplate.formicary.com")
