@@ -16,6 +16,14 @@
     </autodetection-disabled>
   </component>
   <component name="IdProvider" IDEtalkID="95CCB7FB16695220CC4AF40F41D0DDBA" />
+  <component name="IvyIDEA.ProjectSettings">
+    <option name="artifactTypeSettings">
+      <ArtifactTypeSettings />
+    </option>
+    <option name="propertiesSettings">
+      <PropertiesSettings />
+    </option>
+  </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />
     <option name="OPTION_SCOPE" value="protected" />

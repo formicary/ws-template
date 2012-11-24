@@ -17,10 +17,12 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -34,6 +36,21 @@ public class IntegrationTests {
   @Autowired
   private Endpoint endpoint;
   private static final HttpClient client = new DefaultHttpClient();
+
+  @Autowired
+  @Qualifier("catclient")
+  private CatService proxy;
+
+  @Test
+  public void nameCatRest() {
+    assertNotNull(proxy.nameCat());
+  }
+
+  @Test
+  public void makeCatRest() throws Exception {
+    Cat flappy = proxy.makeCat("flappy");
+    assertEquals("flappy", flappy.getCatName());
+  }
 
   @Test
   public void getWSDL() throws IOException {
