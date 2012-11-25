@@ -25,7 +25,7 @@ public class IntegrationTests {
   private CatService soapService;
 
   @Autowired
-  @Qualifier("catclient")
+  @Qualifier("catclientrest")
   private CatService restService;
 
   @Test

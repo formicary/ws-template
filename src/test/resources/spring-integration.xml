@@ -26,7 +26,7 @@
     </jaxrs:features>
   </jaxrs:server>
 
-  <jaxrs:client id="catclient" address="http://localhost:7654/rest" serviceClass="com.formicary.wstemplate.CatService">
+  <jaxrs:client id="catclientrest" address="http://localhost:7654/rest" serviceClass="com.formicary.wstemplate.CatService">
     <jaxrs:headers>
       <entry key="Accept" value="application/json"/>
     </jaxrs:headers>
